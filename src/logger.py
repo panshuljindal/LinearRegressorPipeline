@@ -3,8 +3,8 @@ import os
 from datetime import datetime
 
 LOG_FILE=f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-logsPath = os.path.join(os.getcwd(), "logs", LOG_FILE)
-os.mkdir(logsPath, exist_ok=True)
+logsPath = os.path.join(os.getcwd(), "logs")
+os.mkdir(logsPath) if not os.path.exists(logsPath) else None
 
 LOG_FILE_PATH = os.path.join(logsPath, LOG_FILE)
 
